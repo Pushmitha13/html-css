@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online coin toss</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            color: rgb(175, 128, 220);
+        }
+        p{
+            font-size: 18px;
+        }
+        span{
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        img{
+            width: 250px;
+            height: 250px;
+        }
+
+        button{
+            padding: 10px 24px;
+            background-color: rgb(164, 87, 121);
+            color: white;
+            border-radius: 7px;
+            border: 1px solid rgb(164, 87, 121);
+            font-size: x-large; 
+            margin-top: 20px;  
+        }
+    </style>
+</head>
+<body>
+    <h1>Heads or Tails</h1>
+    <p>Flip a virtual coin with this online and free app.</p>
+    <span>Heads: 0   Tails: 0</span>
+    <img src="https://flipsimu.com/static/coin-image-big-b4e8096a3ec8ecc2b96d5998f19bda6c.png" alt="">
+    <button onclick="toss()">Flip a coin!</button>
+    
+
+
+    <script>
+        let head_count = 0;
+        let tail_count = 0;
+
+        function toss(){
+            let img_ele=document.querySelector("img")
+            let span_ele=document.querySelector("span")
+            let rand_no=Math.round(Math.random()*100)
+
+            if(rand_no % 2 == 0){
+                head_count+=1
+                img_ele.src="https://www.flipaindiancoin.in/img/coin-flip-tails.png"
+                console.log("head")
+            }
+            else{
+                tail_count+=1
+                img_ele.src="https://www.flipaindiancoin.in/img/coin-flip-heads.png"
+                console.log("tail")
+                
+            }
+            span_ele.innerHTML=`Heads:${head_count}   Tails: ${tail_count}`
+            
+        }
+
+    </script>
+</body>
+</html>
